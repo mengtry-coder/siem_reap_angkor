@@ -1,4 +1,4 @@
-push?<?php
+<?php
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -76,16 +76,6 @@ input#rateplan-to_date {
 <head>
 <link rel="stylesheet" type="text/css" href="rate_style.css">
 </head>
-<!-- <?php
-
-$date = new DateTime('2020-05-01');
-$thisMonth = $date->format('m');
-while ($date->format('m') === $thisMonth) {
-    $get_day = $date->format('d'). "\n";
-     echo $get_day;
-        $date->modify('next Sunday');    
-}
- ?> -->
 <div class="rate-plan-index">
 <h5><?= Html::encode($this->title) ?></h5>
     <ul class="nav nav-tabs">
@@ -425,14 +415,14 @@ while ($date->format('m') === $thisMonth) {
                 <div class="row">
                         <!-- Rate Detail section -->
                         <div class="col-md-12">
-                            <div class="days" style="margin: 15px;">
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Mon', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Tue', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Wed', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Thur', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Fri', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Sat', 'uncheck' => 0]) ?>
-                                <?= Html::checkbox('rate_set_up_id', false, ['label' => 'Sun', 'uncheck' => 0]) ?>
+                             <div class="days" style="margin: 15px;">
+                                <?= Html::checkbox('monday', false, ['label' => 'Mon', 'checked' => '1']) ?>
+                                <?= Html::checkbox('tuesday', false, ['label' => 'Tue', 'checked' => '1']) ?>
+                                <?= Html::checkbox('wednesday', false, ['label' => 'Wed', 'checked' => '1']) ?>
+                                <?= Html::checkbox('thursday', false, ['label' => 'Thur', 'checked' => '1']) ?>
+                                <?= Html::checkbox('friday', false, ['label' => 'Fri', 'checked' => '1']) ?>
+                                <?= Html::checkbox('saturday', false, ['label' => 'Sat', 'checked' => '1']) ?>
+                                <?= Html::checkbox('sunday', false, ['label' => 'Sun', 'checked' => '1']) ?>
                             </div>
 
                             <div class="panel panel-bordered panel-dark" style="margin: 20px;">

@@ -160,6 +160,21 @@ class BookingController extends Controller
                     $model_customer_booking_item->save();
                 }
             }
+            // $arr_booking = TourItemCard::find()->where(['session_id'=>session_id()])->all();
+            // foreach ($arr_booking as $row) {
+            //     $id_rate_setup = \backend\models\RatePlanSetup::find()->where(['name'=>$row->name])->one()->id;
+            //     $origional_number = \backend\models\Allotment::find()->where(['rate_set_up_id'=>$id_rate_setup])->all();
+            //     foreach ($origional_number as $value) {
+            //         $row->adult;
+            //         echo $guest = $value->number-$row->adult;
+            //         // echo $guest;
+            //         // exit();
+            //         Yii::$app->db->createCommand()
+            //         ->update('allotment', [$guest], ['id'=>$row->tour_item_id])
+            //         ->execute();
+            //     }
+            // }
+            // exit();
 
             // insert customer booking extra service
 
@@ -210,19 +225,9 @@ class BookingController extends Controller
             $tour_item_added = TourItemCard::Find()->where(['session_id'=>session_id()])->all();
             $booking_url = Yii::getAlias('@web');
             $view_booking = Html::a('<span style= "background: #cccccc; padding: 10px; text-decoration: none; color: black; text-decoration: none;"> View Booking</span>',['/../../allotment/index', 'id' => $booking_id], ['class' => 'btn btn-primary']);
-            // $view_booking = '<button href= "'.$booking_url.'">View Booking</button>';
-            // $arr_booking = TourItemCard::find()->where(['session_id'=>session_id()])->all();
-            // foreach ($arr_booking as $row) {
-            //     $id_rate_setup = \backend\models\RatePlanSetup::find()->where(['name'=>$row->name])->one()->id;
-            //     $origional_number = \backend\models\Allotment::find()->where(['rate_set_up_id'=>$id_rate_setup])->all();
-            //     foreach ($origional_number as $key => $value) {
-            //         $guest = ($value->adult+$value->child)-$origional_number;
-            //         Yii::$app->db->createCommand()
-            //         ->update('allotment', [$guest], ['id'=>$row->tour_item_id])
-            //         ->execute();
-            //     }
-            // }
-            // exit();
+            $view_booking = '<button href= "'.$booking_url.'">View Booking</button>';
+
+
 
             $item_data_arr = "";
             foreach ($tour_item_added as $row) {

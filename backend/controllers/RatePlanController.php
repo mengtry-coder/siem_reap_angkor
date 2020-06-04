@@ -265,7 +265,6 @@ class RatePlanController extends Controller
     }
     public function actionYearlyCreate($month, $id, $year)
     {
-
         $month_value = $month;
 
         $get_tour_setup_id = $id;
